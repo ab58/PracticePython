@@ -198,7 +198,21 @@ def read_from_file(f):
 	
 	for name in name_counts.keys():
 		print name + ": " + str(name_counts[name])
-			
+
+def put_lines_in_list(f):
+	open_file = open(f, "r")
+	f_list = []
+	
+	for line in open_file:
+		f_list.append(int(line))
+		
+	return f_list
+		
+def file_overlap(f1, f2):
+	f1_list = put_lines_in_list(f1)
+	f2_list = put_lines_in_list(f2)
+	
+	return [x for x in f1_list if x in f2_list]
 		
 	
 def main():
@@ -233,6 +247,8 @@ def main():
 	#print password_generator()
 	print binary_search(4, a)
 	read_from_file("nameslist.txt")
+	print file_overlap("primenumbers.txt", "happynumbers.txt")
+	
 	
 if __name__ == "__main__":
 	main()
