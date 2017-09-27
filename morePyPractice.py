@@ -213,6 +213,29 @@ def file_overlap(f1, f2):
 	f2_list = put_lines_in_list(f2)
 	
 	return [x for x in f1_list if x in f2_list]
+
+def draw_board_boundaries(board_size):
+	for i in range(board_size):
+		print "---",
+	print ""
+		
+def draw_gameboard():
+	board_size = input("What size gameboard do you want? ")
+	if board_size == 0:
+		return
+	
+	for i in range(board_size):
+		if i == 0:
+			draw_board_boundaries(board_size)
+		
+		print "|",
+		for j in range(board_size):
+			print " |",
+		print ""
+		
+		draw_board_boundaries(board_size)
+	
+	
 		
 	
 def main():
@@ -248,6 +271,7 @@ def main():
 	print binary_search(4, a)
 	read_from_file("nameslist.txt")
 	print file_overlap("primenumbers.txt", "happynumbers.txt")
+	draw_gameboard()
 	
 	
 if __name__ == "__main__":
