@@ -6,6 +6,7 @@ def who_won_ttt(list_a):
 	#find 3 in a row horizontal, vertical, or diagonal for either Player 1 or Player 2
 	#first find horizontal with identical entries (non-zero)
 	winner_found = False
+	
 	for row in range(0,len(list_a)):
 		if winner_found:
 			break
@@ -22,6 +23,7 @@ def who_won_ttt(list_a):
 				print "Player "+str(x)+" is the winner!"
 				winner_found = True
 				break
+				
 	#next find vertical with identical entries (non-zero)
 	if not winner_found:
 		for col in range(0,len(list_a[0])):
@@ -40,6 +42,7 @@ def who_won_ttt(list_a):
 					print "Player "+str(x)+" is the winner!"
 					winner_found = True
 					break
+					
 	#finally find a diagonal with identical entries (non-zero)
 	#only have to search 2 diagonals, from top left and top right
 	#step downward from top left
@@ -56,6 +59,7 @@ def who_won_ttt(list_a):
 					print "Player "+str(x)+" is the winner!"
 					winner_found = True
 					break
+					
 	#step downward from top right
 	if not winner_found:
 		x = list_a[0][len(list_a)-1]
@@ -70,6 +74,7 @@ def who_won_ttt(list_a):
 					print "Player "+str(x)+" is the winner!"
 					winner_found = True
 					break
+					
 	if not winner_found:
 		print "Tie game!"
 	return winner_found
