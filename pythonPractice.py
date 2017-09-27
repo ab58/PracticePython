@@ -186,7 +186,8 @@ def guess_letters(f):
 				print_inc_word(incomplete_word)
 				
 def birthday_dictionary():
-	b_dict = {"Albert Einstein":"03/14/1879","Benjamin Franklin":"01/17/1706","Ada Lovelace":"12/10/1815"}
+	b_dict = {"Albert Einstein" : "03/14/1879", "Benjamin Franklin" : "01/17/1706", 
+	"Ada Lovelace" : "12/10/1815"}
 	print "Welcome to the birthday dictionary. We know the birthdays of:"
 	for name in b_dict.keys():
 		print name
