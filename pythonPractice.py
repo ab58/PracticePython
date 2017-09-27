@@ -240,7 +240,7 @@ def bokeh_sample():
 	x = [10, 20, 30]
 	y = [4, 5, 6]
 	p = figure()
-	p.vbar(x = x,top = y,width = 0.5)
+	p.vbar(x = x, top = y, width = 0.5)
 	show(p)
 	
 def birthday_plots(f):
@@ -250,25 +250,25 @@ def birthday_plots(f):
 	x_categories = data.keys()
 	y = data.values()
 	p = figure(x_range = x_categories) #This is to get a non-numerical x-axis value to work in the plot
-	p.vbar(x = x,top = y,width = 0.5)
+	p.vbar(x = x, top = y, width = 0.5)
 	show(p)
 	
 def main():
-	who_won_ttt([[1, 0, 1],
-				 [2, 2, 2],
-				 [1, 0, 1]])
+	#who_won_ttt([[1, 0, 1],
+	#			 [2, 2, 2],
+	#			 [1, 0, 1]])
 	play_ttt([[0, 0, 0],
 			  [0, 0, 0],
 			  [0, 0, 0]])
-	print max_of_three(7, 6, 4)
-	picked_word = pick_word("sowpods.txt")
-	print picked_word
-	print len(picked_word)
-	guess_letters("sowpods.txt")
-	#birthday_dictionary()
-	#birthday_json("birthday_dictionary.json")
-	#birthday_months("birthday_dictionary.json")
-	#bokeh_sample()
+	#print max_of_three(7, 6, 4)
+	#picked_word = pick_word("sowpods.txt")
+	#print picked_word
+	#print len(picked_word)
+	#guess_letters("sowpods.txt")
+	birthday_dictionary()
+	birthday_json("birthday_dictionary.json")
+	birthday_months("birthday_dictionary.json")
+	bokeh_sample()
 	birthday_plots("birthday_dictionary.json")
 	
 if __name__ == "__main__":
