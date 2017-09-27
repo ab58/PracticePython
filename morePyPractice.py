@@ -172,11 +172,26 @@ def password_generator():
 	num_chars = input("How long do you want your password to be? ")
 	return "".join(random.sample(char_set, num_chars))
 	
+def binary_search(x, a):
+	start = 0
+	end = len(a)-1
+	
+	while start <= end:
+		mid = (start + end)/2
+		print "searching on index "+str(mid)
+		if a[mid] == x:
+			return True
+		elif x < a[mid]:
+			end = mid - 1
+		elif x > a[mid]:
+			start = mid + 1
+	return False
+	
 def main():
 	#char_input()
 	#odd_or_even()
-	#a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-	a = [1, 1, 2, 4, 2, 3, 5, 7, 4, 3, 4, 6, 8, 10, 12, 8, 10]
+	a = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+	#a = [1, 1, 2, 4, 2, 3, 5, 7, 4, 3, 4, 6, 8, 10, 12, 8, 10]
 	#list_lt_10(a)
 	#divisors()
 	
@@ -201,7 +216,8 @@ def main():
 	#fibonacci()
 	print list_remove_duplicates(a)
 	print reverse_word_order("My name is Arjun")
-	print password_generator()
+	#print password_generator()
+	print binary_search(4, a)
 	
 if __name__ == "__main__":
 	main()
