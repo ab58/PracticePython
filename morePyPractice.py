@@ -234,7 +234,28 @@ def draw_gameboard():
 		print ""
 		
 		draw_board_boundaries(board_size)
+
+def guess_a_number():
+	num = random.randint(1,100)
+	print "You have a number between 1 and 100 ("+str(num)+")"
+	low = 1
+	high = 100
+	guess = 0
+	num_guesses = 0
 	
+	while guess != num:
+		guess = (low + high) / 2
+		num_guesses += 1
+		print "My guess is "+str(guess)
+		
+		if guess == num:
+			print "Correct! That only took " + str(num_guesses) + " guesses!"
+		elif guess < num:
+			print "Too low? Ok guessing again..."
+			low = guess + 1
+		elif guess > num:
+			print "Too high? Ok guessing again..."
+			high = guess - 1
 	
 		
 	
@@ -271,7 +292,8 @@ def main():
 	print binary_search(4, a)
 	read_from_file("nameslist.txt")
 	print file_overlap("primenumbers.txt", "happynumbers.txt")
-	draw_gameboard()
+	#draw_gameboard()
+	guess_a_number()
 	
 	
 if __name__ == "__main__":
