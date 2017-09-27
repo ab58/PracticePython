@@ -178,7 +178,6 @@ def binary_search(x, a):
 	
 	while start <= end:
 		mid = (start + end)/2
-		print "searching on index "+str(mid)
 		if a[mid] == x:
 			return True
 		elif x < a[mid]:
@@ -293,7 +292,7 @@ def main():
 	read_from_file("nameslist.txt")
 	print file_overlap("primenumbers.txt", "happynumbers.txt")
 	#draw_gameboard()
-	guess_a_number(upper_bound)
+	guess_a_number(1000)
 	
 	
 if __name__ == "__main__":
