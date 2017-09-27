@@ -235,11 +235,11 @@ def draw_gameboard():
 		
 		draw_board_boundaries(board_size)
 
-def guess_a_number():
-	num = random.randint(1,100)
+def guess_a_number(upper_bound):
+	num = random.randint(1,upper_bound)
 	print "You have a number between 1 and 100 ("+str(num)+")"
 	low = 1
-	high = 100
+	high = upper_bound
 	guess = 0
 	num_guesses = 0
 	
@@ -293,7 +293,7 @@ def main():
 	read_from_file("nameslist.txt")
 	print file_overlap("primenumbers.txt", "happynumbers.txt")
 	#draw_gameboard()
-	guess_a_number()
+	guess_a_number(upper_bound)
 	
 	
 if __name__ == "__main__":
