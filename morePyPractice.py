@@ -187,6 +187,20 @@ def binary_search(x, a):
 			start = mid + 1
 	return False
 	
+def read_from_file(f):
+	name_counts = {}
+	open_file = open(f, "r")
+	for line in open_file:
+		line = line.strip()
+		if line not in name_counts.keys():
+			name_counts[line] = 0
+		name_counts[line] += 1
+	
+	for name in name_counts.keys():
+		print name + ": " + str(name_counts[name])
+			
+		
+	
 def main():
 	#char_input()
 	#odd_or_even()
@@ -218,6 +232,7 @@ def main():
 	print reverse_word_order("My name is Arjun")
 	#print password_generator()
 	print binary_search(4, a)
+	read_from_file("nameslist.txt")
 	
 if __name__ == "__main__":
 	main()
