@@ -2,7 +2,7 @@ import sys, random, json, re, math, string
 from datetime import datetime
 
 def char_input():
-	name =  raw_input("Enter your name: ")
+	name =  input("Enter your name: ")
 	print ("your name is " + name)
 	age = input("Enter your age: ")
 	currentYear = datetime.now().year
@@ -89,9 +89,9 @@ def only_even(a):
 
 def rps_play():
 		valid_play = "[RPSrps]"
-		play = raw_input("enter your play (R/P/S): ")
+		play = input("enter your play (R/P/S): ")
 		while (not re.match(valid_play, play)):
-			play = raw_input("Invalid play. Try again: ")
+			play = input("Invalid play. Try again: ")
 		return play
 						
 def rock_paper_scissors():
@@ -126,7 +126,7 @@ def guessing_game():
 		else:
 			print ("Correct! That only took "+str(num_guesses)+" guesses!")
 			num_guesses = 0
-			new_game = raw_input("Play again? (type 'exit' to quit) ")
+			new_game = input("Play again? (type 'exit' to quit) ")
 			if new_game != "exit":
 				num = random.randint(1,9)
 				guess = 0
