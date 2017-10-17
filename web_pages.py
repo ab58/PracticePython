@@ -24,7 +24,7 @@ def get_all_text(url):
 def write_to_file(url):
 	r = requests.get(url)
 	soup = BeautifulSoup(r.text,"html.parser")
-	file_name = raw_input("Choose file name for output file: ")
+	file_name = input("Choose file name for output file: ")
 	#The following code is how to create a file stream in Python,
 	#then specify whether it's read or write
 	with open(file_name,"w") as open_file:
@@ -32,7 +32,7 @@ def write_to_file(url):
 		open_file.write(soup.find(class_="dek").getText())
 		full_text = soup.find_all('p')
 		for line in full_text:
-			open_file.write(line.getText().encode("utf-8"))
+			open_file.write(str(line.getText().encode("utf-8")))
 		open_file.close()
 
 def cows_and_bulls():
@@ -43,7 +43,7 @@ def cows_and_bulls():
 	while True:
 		cows = 0
 		bulls = 0
-		user_guess = raw_input("Enter a number: ")
+		user_guess = input("Enter a number: ")
 		for i in range(0, 4):
 			if user_guess[i] == random4dig[i]:
 				cows += 1
