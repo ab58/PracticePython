@@ -11,12 +11,12 @@ def who_won_ttt(list_a):
 		if winner_found:
 			break
 		x = list_a[row][0]
-		#print "x is "+str(x)
+		#print ("x is "+str(x))
 		if x == 0:
 			continue
 		for col in range(1, len(list_a[x])):
 			y = list_a[row][col]
-			#print "y is "+str(y)
+			#print ("y is "+str(y))
 			if y != x:
 				break
 			elif col == len(list_a[col])-1:
@@ -30,12 +30,12 @@ def who_won_ttt(list_a):
 			if winner_found:
 				break
 			x = list_a[0][col]
-			#print "x is "+str(x)
+			#print ("x is "+str(x))
 			if x == 0:
 				continue
 			for row in range(1, len(list_a)):
 				y = list_a[row][col]
-				#print "y is "+str(y)
+				#print ("y is "+str(y))
 				if y != x:
 					break
 				elif row == len(list_a)-1:
@@ -48,11 +48,11 @@ def who_won_ttt(list_a):
 	#step downward from top left
 	if not winner_found:
 		x = list_a[0][0]
-		#print "x is "+str(x)
+		#print ("x is "+str(x))
 		if x != 0:
 			for i in range(1, len(list_a)):
 				y = list_a[i][i]
-				#print "y is "+str(y)
+				#print ("y is "+str(y))
 				if y != x:
 					break
 				elif i == len(list_a)-1:
@@ -63,11 +63,11 @@ def who_won_ttt(list_a):
 	#step downward from top right
 	if not winner_found:
 		x = list_a[0][len(list_a)-1]
-		#print "x is "+str(x)
+		#print ("x is "+str(x))
 		if x != 0:
 			for i in range(1, len(list_a)):
 				y = list_a[i][len(list_a)-1-i]
-				#print "y is "+str(y)
+				#print ("y is "+str(y))
 				if y != x:
 					break
 				elif len(list_a)-1-i == 0:
@@ -146,7 +146,7 @@ def guess_letters(f):
 		for i in range(0, len(word)):
 			incomplete_word.append("_")
 		print_inc_word(incomplete_word)
-		#print str(len(word))+" "+str(len(incomplete_word))
+		#print (str(len(word))+" "+str(len(incomplete_word)))
 		
 		word_complete = False
 		penalty = 0
@@ -261,10 +261,10 @@ def main():
 	play_ttt([[0, 0, 0],
 			  [0, 0, 0],
 			  [0, 0, 0]])
-	#print max_of_three(7, 6, 4)
+	#print (max_of_three(7, 6, 4))
 	#picked_word = pick_word("sowpods.txt")
-	#print picked_word
-	#print len(picked_word)
+	#print (picked_word)
+	#print (len(picked_word))
 	#guess_letters("sowpods.txt")
 	birthday_dictionary()
 	birthday_json("birthday_dictionary.json")
