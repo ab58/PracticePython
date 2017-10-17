@@ -6,7 +6,7 @@ def char_input():
 	print ("your name is " + name)
 	age = input("Enter your age: ")
 	currentYear = datetime.now().year
-	#print currentYear
+	#print (currentYear)
 	print (name + ", you will turn 100 years old in the year "+str(100-age+currentYear)+".")
 
 	otherNumber = input("Give me another number: ")
@@ -15,7 +15,7 @@ def char_input():
 
 def odd_or_even():
 	number = input("Give me a number: ")
-	#print number % 2
+	#print (number % 2)
 	if number % 4 == 0:
 		print ("number is a multiple of 4.")
 	elif number % 2 == 0:
@@ -34,7 +34,7 @@ def list_lt_10(a):
 	b = []
 	for x in a:
 		if x < 5:
-			#print a[i]
+			#print (a[i])
 			b.append(x)
 	print (b)
 
@@ -54,7 +54,7 @@ def divisors():
 	for x in range(1, num/2+1):
 		if num % x == 0:
 			a.append(x)
-	#print a
+	#print (a)
 	for elem in a:
 		print (elem)
 
@@ -68,7 +68,7 @@ def list_overlap(a,b):
 	c = []
 	
 	#for x in a:
-		#print x
+		#print (x)
 	#	if x in a and x in b and x not in c:
 	#		c.append(x)
 
@@ -275,19 +275,19 @@ def main():
 	#print b
 	
 	#list_overlap(a,b)
-	#print is_palindrome(sys.argv[1])
+	#print (is_palindrome(sys.argv[1]))
 	#b = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144]
-	#print only_even(b)
+	#print (only_even(b))
 	#rock_paper_scissors()
 	#guessing_game()
 	#b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-	#print list_overlap(a, b)
+	#print (list_overlap(a, b))
 	print (is_prime(53))
 	print (list_ends(a))
 	#fibonacci()
 	print (list_remove_duplicates(a))
 	print (reverse_word_order("My name is Arjun"))
-	#print password_generator()
+	#print (password_generator())
 	print (binary_search(4, a))
 	read_from_file("nameslist.txt")
 	print (file_overlap("primenumbers.txt", "happynumbers.txt"))
