@@ -20,7 +20,7 @@ def who_won_ttt(list_a):
 			if y != x:
 				break
 			elif col == len(list_a[col])-1:
-				print "Player " + str(x) + " is the winner!"
+				print ("Player " + str(x) + " is the winner!")
 				winner_found = True
 				break
 				
@@ -39,7 +39,7 @@ def who_won_ttt(list_a):
 				if y != x:
 					break
 				elif row == len(list_a)-1:
-					print "Player " + str(x) + " is the winner!"
+					print ("Player " + str(x) + " is the winner!")
 					winner_found = True
 					break
 					
@@ -56,7 +56,7 @@ def who_won_ttt(list_a):
 				if y != x:
 					break
 				elif i == len(list_a)-1:
-					print "Player "+str(x)+" is the winner!"
+					print ("Player "+str(x)+" is the winner!")
 					winner_found = True
 					break
 					
@@ -71,17 +71,17 @@ def who_won_ttt(list_a):
 				if y != x:
 					break
 				elif len(list_a)-1-i == 0:
-					print "Player " + str(x) + " is the winner!"
+					print ("Player " + str(x) + " is the winner!")
 					winner_found = True
 					break
 					
 	if not winner_found:
-		print "Tie game!"
+		print ("Tie game!")
 	return winner_found
 		
 def play_ttt(game_board):
 	for i in range(0,len(game_board)):
-		print game_board[i]
+		print (game_board[i])
 	while not who_won_ttt(game_board):
 		valid_play = False
 		zero_found = False
@@ -90,12 +90,12 @@ def play_ttt(game_board):
 			row = int(coords1.split(",")[0])-1
 			col = int(coords1.split(",")[1])-1
 			if game_board[row][col] != 0:
-				print "Those coordinates have already been played. Please try again."
+				print ("Those coordinates have already been played. Please try again.")
 			else:
 				game_board[row][col] = 1
 				valid_play = True
 				for i in range(0,len(game_board)):
-					print game_board[i]
+					print (game_board[i])
 					if 0 in game_board[i]:
 						zero_found = True
 		if who_won_ttt(game_board) or not zero_found:
@@ -106,12 +106,12 @@ def play_ttt(game_board):
 			row = int(coords2.split(",")[0])-1
 			col = int(coords2.split(",")[1])-1
 			if game_board[row][col] != 0:
-				print "Those coordinates have already been played. Please try again."
+				print ("Those coordinates have already been played. Please try again.")
 			else:
 				game_board[row][col] = 2
 				valid_play = True
 				for i in range(0, len(game_board)):
-					print game_board[i]
+					print (game_board[i])
 					
 def max_of_three(x, y, z):
 	if x > y and x > z:
@@ -135,11 +135,11 @@ def pick_word(f):
 	
 def print_inc_word(incomplete_word):
 	for i in range(0, len(incomplete_word)):
-		print incomplete_word[i],
-	print ""
+		print (incomplete_word[i],)
+	print ("")
 def guess_letters(f):
 	while True:
-		print "Welcome to Hangman!"
+		print ("Welcome to Hangman!")
 		word = pick_word(f)
 		incomplete_word = []
 		
@@ -156,7 +156,7 @@ def guess_letters(f):
 			guess = raw_input("Guess your letter: ")
 		
 			if guess in already_guessed:
-				print "You've already guessed this letter! Try again."
+				print ("You've already guessed this letter! Try again.")
 				print_inc_word(incomplete_word)
 				continue
 			else:
@@ -173,12 +173,12 @@ def guess_letters(f):
 					if new_game == "N":
 						return
 			else:
-				print "Incorrect!"
+				print ("Incorrect!")
 				penalty += 1
 				if penalty == 5:
-					print "Only " + str(int(6 - penalty)) + " incorrect guess left!"
+					print ("Only " + str(int(6 - penalty)) + " incorrect guess left!")
 				elif penalty<6:
-					print "Only " + str(int(6 - penalty)) + " incorrect guesses left!"
+					print ("Only " + str(int(6 - penalty)) + " incorrect guesses left!")
 				else:
 					new_game = raw_input("You lose! Start new game? (Y/N) ")
 					if new_game == "N":
@@ -188,23 +188,23 @@ def guess_letters(f):
 def birthday_dictionary():
 	b_dict = {"Albert Einstein" : "03/14/1879", "Benjamin Franklin" : "01/17/1706", 
 	"Ada Lovelace" : "12/10/1815"}
-	print "Welcome to the birthday dictionary. We know the birthdays of:"
+	print ("Welcome to the birthday dictionary. We know the birthdays of:")
 	for name in b_dict.keys():
-		print name
+		print (name)
 	name = raw_input("Whose birthday do you want to look up?\n")
-	print name + "'s birthday is " + b_dict[name]
+	print (name + "'s birthday is " + b_dict[name])
 	
 
 def birthday_json(f):
 	with open(f, "r") as open_file:
 		b_dict = json.load(open_file)
 		
-	print "Welcome to the birthday dictionary. We know the birthdays of:"
+	print ("Welcome to the birthday dictionary. We know the birthdays of:")
 	for name in b_dict.keys():
-		print name
+		print (name)
 		
 	name = raw_input("Whose birthday do you want to look up?\n")
-	print name + "'s birthday is " + b_dict[name]
+	print (name + "'s birthday is " + b_dict[name])
 	
 	req = raw_input("Would you like to add another scientist's name and birthday to the dictionary? (Y/N) ")
 	if req == "Y":
@@ -221,19 +221,19 @@ def birthday_months(f):
 	birth_month_numbers = {"01" : "January", "02" : "February", "03" : "March", "04" : "April", "05" : "May", 
 							"06" : "June", "07" : "July", "08" : "August", "09" : "September", "10" : "October", "11" : "November", "12" : "December"}
 	DOB_months = []
-	print "Welcome to the birthday dictionary. We know the birthdays of:"
+	print ("Welcome to the birthday dictionary. We know the birthdays of:")
 	for name in b_dict.keys():
-		print name
+		print (name)
 		DOB = b_dict[name]
 		DOB_month_num = DOB.split("/")[0]
 		DOB_months.append(birth_month_numbers[DOB_month_num])
 	
-	print "Here are the birth months of scientists in the database and how many were born in each month:"
+	print ("Here are the birth months of scientists in the database and how many were born in each month:")
 	c = Counter(DOB_months)
-	print "{"
+	print ("{")
 	for k, v in c.most_common():
-		print "\t" + k + ": " + str(v)
-	print "}"
+		print ("\t" + k + ": " + str(v))
+	print ("}")
 	return c
 
 def bokeh_sample():
