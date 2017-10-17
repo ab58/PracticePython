@@ -10,16 +10,16 @@ def get_page(url):
 	soup = BeautifulSoup(r.text,"html.parser")
 	titles = soup.find_all(class_="story-heading")
 	for t in titles:
-		print t.text.strip()
+		print (t.text.strip())
 		
 def get_all_text(url):
 	r = requests.get(url)
 	soup = BeautifulSoup(r.text,"html.parser")
-	print soup.find(class_="hed").getText()
-	print soup.find(class_="dek").getText()
+	print (soup.find(class_="hed").getText())
+	print (soup.find(class_="dek").getText())
 	article_text = soup.find_all('p')
 	for line in article_text:
-		print line.getText()
+		print (line.getText())
 		
 def write_to_file(url):
 	r = requests.get(url)
@@ -38,7 +38,7 @@ def write_to_file(url):
 def cows_and_bulls():
 	numbers = "1234567890"
 	random4dig = "".join(random.sample(numbers,4))
-	print "Welcome to the Cows and Bulls Game!"
+	print ("Welcome to the Cows and Bulls Game!")
 	guesses = 0
 	while True:
 		cows = 0
@@ -55,18 +55,18 @@ def cows_and_bulls():
 			cowPl = "cow"
 		if bulls == 1:
 			bullPl = "bull"
-		print str(cows)+" "+cowPl+", "+str(bulls)+" "+bullPl
+		print (str(cows)+" "+cowPl+", "+str(bulls)+" "+bullPl)
 		guesses += 1
 		if cows == 4:
-			print "That's correct! That took "+str(guesses)+" guesses!"
+			print ("That's correct! That took "+str(guesses)+" guesses!")
 			break
 		
 
 def main():
-	get_page("https://www.nytimes.com/")
-	cows_and_bulls()
+	#get_page("https://www.nytimes.com/")
+	#cows_and_bulls()
 	#get_all_text("https://www.vanityfair.com/style/society/2014/06/monica-lewinsky-humiliation-culture")
-	#write_to_file("https://www.vanityfair.com/style/society/2014/06/monica-lewinsky-humiliation-culture")
+	write_to_file("https://www.vanityfair.com/style/society/2014/06/monica-lewinsky-humiliation-culture")
 
 if __name__ == "__main__":
 	main()
