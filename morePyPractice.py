@@ -3,32 +3,32 @@ from datetime import datetime
 
 def char_input():
 	name =  raw_input("Enter your name: ")
-	print "your name is "+name
+	print ("your name is " + name)
 	age = input("Enter your age: ")
 	currentYear = datetime.now().year
 	#print currentYear
-	print name+", you will turn 100 years old in the year "+str(100-age+currentYear)+"."
+	print (name + ", you will turn 100 years old in the year "+str(100-age+currentYear)+".")
 
 	otherNumber = input("Give me another number: ")
 	for i in range(0, otherNumber):
-		print name + " you will turn 100 years old in the year "+str(100-age+currentYear)+"."
+		print (name + " you will turn 100 years old in the year "+str(100-age+currentYear)+".")
 
 def odd_or_even():
 	number = input("Give me a number: ")
 	#print number % 2
 	if number % 4 == 0:
-		print "number is a multiple of 4."
+		print ("number is a multiple of 4.")
 	elif number % 2 == 0:
-		print "number is even."
+		print ("number is even.")
 	else:
-		print "number is odd."
+		print ("number is odd.")
 	
 	num = input("Give me another number: ")
 	check = input("Give me a divisor: ")
 	if num % check == 0:
-		print str(check)+" divides evenly into "+str(num)+"." 
+		print (str(check)+" divides evenly into "+str(num)+".") 
 	else:
-		print str(check)+" does not divide evenly into "+str(num)+"." 
+		print (str(check)+" does not divide evenly into "+str(num)+".") 
 
 def list_lt_10(a):
 	b = []
@@ -36,35 +36,35 @@ def list_lt_10(a):
 		if x < 5:
 			#print a[i]
 			b.append(x)
-	print b
+	print (b)
 
 	##THIS IS HOW TO DO IT IN ONE LINE; CALLED LIST COMPREHENSION
 	b = [x for x in a if x<5]
-	print b
+	print (b)
 
 	comparator = input("Give me a number: ")
 	b = [x for x in a if x<comparator]
-	print "elements of a that are less than "+str(comparator)+":"
-	print b
+	print ("elements of a that are less than "+str(comparator)+":")
+	print (b)
 
 def divisors():	
 	num = input("Give me a number: ")
-	print "Divisors for "+str(num)+":"
+	print ("Divisors for "+str(num)+":")
 	a = []
 	for x in range(1, num/2+1):
 		if num % x == 0:
 			a.append(x)
 	#print a
 	for elem in a:
-		print elem
+		print (elem)
 
 def list_overlap(a,b):	
 	#The command ast.literal_eval(string) converts string argument to list
 	#a = ast.literal_eval(sys.argv[1])
 	#b = ast.literal_eval(sys.argv[2])
 
-	print "a="+str(a)
-	print "b="+str(b)
+	print ("a="+str(a))
+	print ("b="+str(b))
 	c = []
 	
 	#for x in a:
@@ -75,7 +75,7 @@ def list_overlap(a,b):
 	#do the LIST COMPREHENSION to get common values for a and b
 	[c.append(x) for x in a if x in b and x not in c]
 	
-	print c
+	print (c)
 	
 def is_palindrome(s):
 	for i in range(0,len(s)):
@@ -98,17 +98,17 @@ def rock_paper_scissors():
 	p1 = ""
 	p2 = ""
 	while p1.lower() == p2.lower():
-		print "Player 1",
+		print ("Player 1",)
 		p1 = rps_play()
-		print "Player 2",
+		print ("Player 2",)
 		p2 = rps_play()
 		
 	if (p1.lower() == "r" and p2.lower() == "s"
 		or p1.lower == "p" and p2.lower() == "r"
 		or p1.lower() == "s" and p2.lower() == "p"):
-		print "Player 1 wins!"
+		print ("Player 1 wins!")
 	else:
-		print "Player 2 wins!"
+		print ("Player 2 wins!")
 		
 def guessing_game():
 	guess = 0
@@ -120,11 +120,11 @@ def guessing_game():
 		guess = input("Guess a number between 1 and 9: ")
 		num_guesses += 1
 		if guess < num:
-			print "Too low! Guess again."
+			print ("Too low! Guess again.")
 		elif guess > num:
-			print "Too high! Guess again."
+			print ("Too high! Guess again.")
 		else:
-			print "Correct! That only took "+str(num_guesses)+" guesses!"
+			print ("Correct! That only took "+str(num_guesses)+" guesses!")
 			num_guesses = 0
 			new_game = raw_input("Play again? (type 'exit' to quit) ")
 			if new_game != "exit":
@@ -150,15 +150,15 @@ def list_ends(a):
 def fibonacci():
 	amount = input("How many Fibonacci numbers? ")
 	fib_list = []
-	print "The first " + str(amount) + " Fibonacci numbers are:"
+	print ("The first " + str(amount) + " Fibonacci numbers are:")
 	
 	for i in range(0, amount):
 		if i <= 1:
 			fib_list.append(1)
 		else:
 			fib_list.append(fib_list[i-1] + fib_list[i-2])
-		print str(fib_list[i]) + " ",
-	print ""
+		print (str(fib_list[i]) + " ",)
+	print ("")
 	
 def list_remove_duplicates(a):
 	a = set(a)
@@ -177,7 +177,7 @@ def binary_search(x, a):
 	end = len(a)-1
 	
 	while start <= end:
-		mid = (start + end)/2
+		mid = (int)((start + end)/2)
 		if a[mid] == x:
 			return True
 		elif x < a[mid]:
@@ -196,7 +196,7 @@ def read_from_file(f):
 		name_counts[line] += 1
 	
 	for name in name_counts.keys():
-		print name + ": " + str(name_counts[name])
+		print (name + ": " + str(name_counts[name]))
 
 def put_lines_in_list(f):
 	open_file = open(f, "r")
@@ -215,8 +215,8 @@ def file_overlap(f1, f2):
 
 def draw_board_boundaries(board_size):
 	for i in range(board_size):
-		print "---",
-	print ""
+		print ("---",)
+	print ("")
 		
 def draw_gameboard():
 	board_size = input("What size gameboard do you want? ")
@@ -227,33 +227,33 @@ def draw_gameboard():
 		if i == 0:
 			draw_board_boundaries(board_size)
 		
-		print "|",
+		print ("|",)
 		for j in range(board_size):
-			print " |",
-		print ""
+			print (" |",)
+		print ("")
 		
 		draw_board_boundaries(board_size)
 
 def guess_a_number(upper_bound):
 	num = random.randint(1,upper_bound)
-	print "You have a number between 1 and 100 ("+str(num)+")"
+	print ("You have a number between 1 and 100 ("+str(num)+")")
 	low = 1
 	high = upper_bound
 	guess = 0
 	num_guesses = 0
 	
 	while guess != num:
-		guess = (low + high) / 2
+		guess = (int)((low + high) / 2)
 		num_guesses += 1
-		print "My guess is "+str(guess)
+		print ("My guess is "+str(guess))
 		
 		if guess == num:
-			print "Correct! That only took " + str(num_guesses) + " guesses!"
+			print ("Correct! That only took " + str(num_guesses) + " guesses!")
 		elif guess < num:
-			print "Too low? Ok guessing again..."
+			print ("Too low? Ok guessing again...")
 			low = guess + 1
 		elif guess > num:
-			print "Too high? Ok guessing again..."
+			print ("Too high? Ok guessing again...")
 			high = guess - 1
 	
 		
@@ -271,7 +271,7 @@ def main():
 	#of items in list (in this case, a randomly generated integer)
 	#a = random.sample(xrange(1,101),random.randint(1,10))
 	#b = random.sample(xrange(1,101),random.randint(1,10))
-	print a
+	print (a)
 	#print b
 	
 	#list_overlap(a,b)
@@ -282,15 +282,15 @@ def main():
 	#guessing_game()
 	#b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 	#print list_overlap(a, b)
-	print is_prime(53)
-	print list_ends(a)
+	print (is_prime(53))
+	print (list_ends(a))
 	#fibonacci()
-	print list_remove_duplicates(a)
-	print reverse_word_order("My name is Arjun")
+	print (list_remove_duplicates(a))
+	print (reverse_word_order("My name is Arjun"))
 	#print password_generator()
-	print binary_search(4, a)
+	print (binary_search(4, a))
 	read_from_file("nameslist.txt")
-	print file_overlap("primenumbers.txt", "happynumbers.txt")
+	print (file_overlap("primenumbers.txt", "happynumbers.txt"))
 	#draw_gameboard()
 	guess_a_number(1000)
 	
