@@ -86,7 +86,7 @@ def play_ttt(game_board):
 		valid_play = False
 		zero_found = False
 		while not valid_play:
-			coords1 = raw_input("Player 1 enter coordinates to play on (in format row,col): ")
+			coords1 = input("Player 1 enter coordinates to play on (in format row,col): ")
 			row = int(coords1.split(",")[0])-1
 			col = int(coords1.split(",")[1])-1
 			if game_board[row][col] != 0:
@@ -102,7 +102,7 @@ def play_ttt(game_board):
 			break
 		valid_play = False
 		while not valid_play:
-			coords2 = raw_input("Player 2 enter coordinates to play on (in format row,col): ")
+			coords2 = input("Player 2 enter coordinates to play on (in format row,col): ")
 			row = int(coords2.split(",")[0])-1
 			col = int(coords2.split(",")[1])-1
 			if game_board[row][col] != 0:
@@ -153,7 +153,7 @@ def guess_letters(f):
 		already_guessed = []
 		while not word_complete and penalty < 6:
 				
-			guess = raw_input("Guess your letter: ")
+			guess = input("Guess your letter: ")
 		
 			if guess in already_guessed:
 				print ("You've already guessed this letter! Try again.")
@@ -169,7 +169,7 @@ def guess_letters(f):
 				print_inc_word(incomplete_word)
 				if "_" not in incomplete_word:
 					word_complete = True
-					new_game = raw_input("You win! Start new game? (Y/N) ")
+					new_game = input("You win! Start new game? (Y/N) ")
 					if new_game == "N":
 						return
 			else:
@@ -180,7 +180,7 @@ def guess_letters(f):
 				elif penalty<6:
 					print ("Only " + str(int(6 - penalty)) + " incorrect guesses left!")
 				else:
-					new_game = raw_input("You lose! Start new game? (Y/N) ")
+					new_game = input("You lose! Start new game? (Y/N) ")
 					if new_game == "N":
 						return
 				print_inc_word(incomplete_word)
@@ -191,7 +191,7 @@ def birthday_dictionary():
 	print ("Welcome to the birthday dictionary. We know the birthdays of:")
 	for name in b_dict.keys():
 		print (name)
-	name = raw_input("Whose birthday do you want to look up?\n")
+	name = input("Whose birthday do you want to look up?\n")
 	print (name + "'s birthday is " + b_dict[name])
 	
 
@@ -203,13 +203,13 @@ def birthday_json(f):
 	for name in b_dict.keys():
 		print (name)
 		
-	name = raw_input("Whose birthday do you want to look up?\n")
+	name = input("Whose birthday do you want to look up?\n")
 	print (name + "'s birthday is " + b_dict[name])
 	
-	req = raw_input("Would you like to add another scientist's name and birthday to the dictionary? (Y/N) ")
+	req = input("Would you like to add another scientist's name and birthday to the dictionary? (Y/N) ")
 	if req == "Y":
-		new_name = raw_input("Great! Please enter the name of the scientist: ")
-		new_DOB = raw_input("Now enter their DOB (MM/DD/YYYY): ")
+		new_name = input("Great! Please enter the name of the scientist: ")
+		new_DOB = input("Now enter their DOB (MM/DD/YYYY): ")
 		b_dict[new_name] = new_DOB
 		with open(f, "w") as open_file:
 			json.dump(b_dict, open_file)
